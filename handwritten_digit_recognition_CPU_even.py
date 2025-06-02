@@ -48,7 +48,8 @@ model = OddEvenNet().to(device)
 
 # 3. Loss and Optimizer
 criterion = nn.BCEWithLogitsLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+# optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.SGD(model.parameters(), lr=0.003, momentum=0.9)
 
 # 4. Training Loop
 epochs = 15
